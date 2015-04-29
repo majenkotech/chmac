@@ -11,3 +11,9 @@ provide your own MAC address to use with the -m flag.  MAC
 addresses must be provided in the format xx:xx:xx:xx:xx:xx
 where 'xx' is a two-digit hexadecimal value between 00 and ff.
 
+The WiFi module will subsequently be identified as a new device
+(wlan1 instead of wlan0 for instance) so you will need to
+edit /etc/udev/rules.d/70-persistent-net.rules to change it back to
+wlan0 and remove the old wlan0 entry, or disable the persistent
+rules system completely by replacing the file with a symlink to
+/dev/null.
