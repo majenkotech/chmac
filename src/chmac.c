@@ -169,7 +169,7 @@ int main(int argc, char **argv) {
                         newmac[3], newmac[4], newmac[5]);
                     printf("New MAC: %s\n", mac);
                     if (lseek(fd, here, SEEK_SET) == here) {
-                        (void)write(fd, mac, 17);
+                        write(fd, mac, 17);
                     }
                 } else {
                     printf("The MAC address has already been changed.\nUse -f to force a new change.\n");
